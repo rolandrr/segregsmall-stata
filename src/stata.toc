@@ -1,0 +1,3 @@
+v 3
+d Github of Lucas Girard (CREST)
+p SEGREGSMALL estimation of segregation indices in small-unit settings
