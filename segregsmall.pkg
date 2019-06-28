@@ -1,0 +1,45 @@
+v 3
+
+* title
+d 'SEGREGSMALL': estimation of segregation indices in small-unit settings
+
+* description/author's)
+d The package 'segregsmall' implements several estimation and inference methods 
+d to get classical segregation indices (Duncan, Theil, Atkinson, Coworker, and Gini),
+d in particular in situations where the units (neigbourhoods, firms, classrooms, etc.)
+d are 'small', namely contain few individuals.
+d
+d The three methods implemented come from the following articles:
+d - D'Haultfoeuille, X. and Rathelot, R., 2017.
+d Measuring segregation on small units: A partial identification analysis.
+d Quantitative Economics, 8(1), pp.39-73.
+d - Rathelot, R., 2012. 
+d Measuring segregation when units are small: a parametric approach. 
+d Journal of Business & Economic Statistics, 30(4), pp.546-553.
+d - Carrington, W.J. and Troske, K.R., 1997.
+d On measuring segregation in samples with small units.
+d Journal of Business & Economic Statistics, 15(4), pp.402-409.
+d
+d The package also allows to estimate conditional indices that measures "net"
+d or "residual" segregation: taking into account other characteristics 
+d (either of individuals, or of units) that may influence the allocation
+d of individuals into units.
+d
+d Requires: Stata version 13 (TBD IF POSSIBLE LOWER)
+d
+d Distribution-Date: 20190215
+d
+d Authors: Lucas Girard (CREST), Xavier D'Haultfoeuille (CREST), Roland Rathelot (Warwick)
+d Support: lucas.girard@ensae.fr
+
+* installation files
+f lsegregsmall.mlib
+f db_from_unit_level.ado
+f db_from_indiv_level.ado
+f db_from_unit_level_cond_unit.ado
+f db_from_indiv_level_cond_unit.ado
+f db_from_indiv_level_cond_indiv.ado
+f segregsmall.ado
+f segregsmall.sthlp
+
+e
