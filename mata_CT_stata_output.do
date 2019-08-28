@@ -1,4 +1,5 @@
-/* Wrap-up functions for estimation and inference */
+version 14.2
+/* Wrap-up functions for estimation and inference for CT method */
 
 /******************************************************************************/
 /* Unconditional analysis */
@@ -68,7 +69,7 @@ struct Results_eci scalar St_esti_ct_DTACWG_uncond(struct Struct_db_uncond scala
 	/* estimation under random allocation (begin) */
 	if (nb_ct_repetition > 300) multiple_for_trace = 50
 	else multiple_for_trace = 10
-	displayas("text"); printf("CT correction - current random allocation iteration x%f (out of %f):\n", multiple_for_trace, nb_ct_repetition); displayflush()
+	displayas("text"); printf("CT-correction - current random allocation iteration x%f (out of %f):\n", multiple_for_trace, nb_ct_repetition); displayflush()
 	store_indices_random_allocation = J(nb_ct_repetition, 5, .)
 	for(b = 1; b <= nb_ct_repetition; b++) {
 	

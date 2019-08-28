@@ -1,4 +1,5 @@
-/* Functions to do CT correction */
+version 14.2
+/* Functions to do CT-correction */
 
 /* Construct_db_random_allocation() */
 /* construct a database under the hypothesis of randomness
@@ -125,5 +126,4 @@ real scalar Compute_CFC_standard_score(	real scalar index_realized_in_data, ///
 										real scalar index_random_allo_sd){										
 	return((index_realized_in_data - index_random_allo_mean) / index_random_allo_sd)
 }
-end										
-
+end					

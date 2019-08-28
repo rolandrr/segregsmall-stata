@@ -1,3 +1,4 @@
+version 14.2
 /******************************************************************************/
 /* This do-file creates the different mata structures and functions used to 
 perform the test of the binomial mixture model - DHR Appendix C.1 + extension

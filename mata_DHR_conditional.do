@@ -1,3 +1,4 @@
+version 14.2
 /******************************************************************************/
 /* this do-files implements the functions to include covariates
 (cf. Appendix B.2 of DHR) */
@@ -475,4 +476,3 @@ struct Struct_db_cond scalar Draw_Struct_db_cond_bootstrap_i(struct Struct_db_co
 	return(struct_db_cond_boot)
 }
 end	
-

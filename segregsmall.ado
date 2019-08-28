@@ -1,7 +1,6 @@
 capture program drop segregsmall
 program define segregsmall, eclass
-
-	version 13
+	version 14.2
 	
 	/**************************/
 	/* Syntax command (begin) */
@@ -248,6 +247,7 @@ end
 in unconditional analyses */
 capture program drop Output_info_data_uncond
 program define Output_info_data_uncond, eclass
+	version 14.2	
 
 	mata: st_numscalar("I_withsingle", struct_db_uncond.info_data.I_withsingleton)
 	mata: st_numscalar("nb_units_total", struct_db_uncond.info_data.nb_units_total)
@@ -281,7 +281,8 @@ end
 in conditional analyses */
 capture program drop Output_info_data_cond
 program define Output_info_data_cond, eclass
-
+	version 14.2
+	
 	/* aggregated information (begin) */
 	mata: st_numscalar("nb_types", struct_db_cond.nb_types)
 	mata: st_numscalar("I_unit_level_characteristic", struct_db_cond.I_unit_level_characteristic)
@@ -361,6 +362,7 @@ end
 estimation and inference */
 capture program drop Output_info_estimation_inference
 program define Output_info_estimation_inference, eclass
+	version 14.2
 	args results
 	mata: st_numscalar("I_method_np", `results'.info_eci.I_method_np)
 	mata: st_numscalar("I_method_beta", `results'.info_eci.I_method_beta)
@@ -394,6 +396,7 @@ end
 /******************************************************************************/
 capture program drop Display_test_binomial
 program define Display_test_binomial
+	version 14.2
 	args results repbootstrap
 	
 	mata: st_numscalar("stat_test", `results'.uncond.test_binomial_results[1])
@@ -424,7 +427,8 @@ end
 /******************************************************************************/
 capture program drop Display_information_data
 program define Display_information_data
-
+	version 14.2
+	
 	args I_conditional I_noinference I_independencekp repbootstrap I_withsingle I_excludingsinglepertype I_method_np_or_beta repct
 	
 	if (`I_conditional') { /* conditional analysis (begin) */
@@ -474,8 +478,8 @@ program define Display_information_data
 			else 					display as text "Inference: " as input " by bootstrap, `repbootstrap' repetitions"
 		}
 		else {
-			display as text "No inference in the proportion-based indices framework"
-			display as text "CT-correction is made using " as input "`repct' draws " as text "under random allocation"
+			display as text "No inference for naive and CT-corrected indices"
+			display as text "CT-correction is made using " as input "`repct' draws " as text "under random allocation (u.r.a.)"
 		}
 		
 		display as text "" /* to leave some space, but less than display _newline */
@@ -494,7 +498,8 @@ end
 /******************************************************************************/
 capture program drop Output_np_method
 program define Output_np_method, eclass
-
+	version 14.2
+	
 	args I_conditional results I_specified_alpha alpha_text I_noinference I_independencekp I_testbinomial repbootstrap I_withsingle I_excludingsinglepertype repct
 
 	ereturn clear
@@ -666,8 +671,8 @@ program define Output_np_method, eclass
 	/**********************/
 	
 	display as text "" /* to leave some space, but less that display _newline */
-	display as text "Bounds for segregation indices using non parametric (np) method:"
-	display as text "{hline 65}"
+	display as text "Bounds for segregation indices using nonparametric (np) method:"
+	display as text "{hline 64}"
 	
 	Display_information_data `I_conditional' `I_noinference' `I_independencekp' `repbootstrap' `I_withsingle' `I_excludingsinglepertype' 1 `repct'
 		
@@ -723,6 +728,7 @@ end
 /******************************************************************************/
 capture program drop Display_line_np
 program define Display_line_np
+	version 14.2
 	args name_index name_weight bounds_l bounds_u ci_low ci_up ///
 		col_indent_first_col col_weight col_vert_line col_bounds_l col_bounds_u col_conf_int width_format I_noinference
 	if(`I_noinference') local indent_conf_int 5
@@ -738,7 +744,8 @@ end
 /******************************************************************************/
 capture program drop Output_beta_method
 program define Output_beta_method, eclass
-
+	version 14.2
+	
 	args I_conditional results I_specified_alpha alpha_text I_noinference I_independencekp I_testbinomial repbootstrap I_withsingle I_excludingsinglepertype repct
  	
 	ereturn clear
@@ -903,7 +910,7 @@ program define Output_beta_method, eclass
 	local col_conf_int 51
 	local width_format 7
 	display as text _col(`col_indent_first_col') "Index" _col(`col_weight') "Weight-level" _col(`col_vert_line') "{c |}" ///
-		_col(`col_index_hat') "Point estimate" ///
+		_col(`col_index_hat') "Point-estimate" ///
 		_col(`col_conf_int') "[`alpha_text'% Conf. Interval]"
 	display as text "{hline `=`col_vert_line'-1'}{c +}{hline 41}" //53
 	local name_1 Duncan
@@ -952,6 +959,7 @@ end
 /******************************************************************************/
 capture program drop Display_line_beta
 program define Display_line_beta
+	version 14.2	
 	args name_index name_weight index_hat ci_low ci_up ///
 		col_indent_first_col col_weight col_vert_line col_index_hat col_conf_int width_format I_noinference
 	if(`I_noinference') local indent_conf_int 5
@@ -966,7 +974,8 @@ end
 /******************************************************************************/
 capture program drop Output_ct_method
 program define Output_ct_method, eclass
-
+	version 14.2
+	
 	args I_conditional results I_specified_alpha alpha_text I_noinference I_independencekp I_testbinomial repbootstrap I_withsingle I_excludingsinglepertype repct
 	
 	ereturn clear
@@ -1060,23 +1069,23 @@ program define Output_ct_method, eclass
 	/**********************/
 
 	display as text "" /* to leave some space, but less that display _newline */
-	display as text "Estimates for segregation indices using proportion-based and CT correction (ct) method:"
-	display as text "{hline 88}"
+	display as text "Estimates for segregation indices using CT-correction (ct) method:"
+	display as text "{hline 67}"
 	
 	Display_information_data `I_conditional' `I_noinference' `I_independencekp' `repbootstrap' `I_withsingle' `I_excludingsinglepertype' 0 `repct'
 	
 	local col_indent_first_col 4
 	local col_weight 16
 	local col_vert_line 30
-	local col_proportion_based 33	
-	local col_mean_under_ra 53
-	local col_CT_corrected 83
+	local col_proportion_based 35	
+	local col_mean_under_ra 46
+	local col_CT_corrected 66
 	local width_format 7
 	display as text _col(`col_indent_first_col') "Index" _col(`col_weight') "Weight-level" _col(`col_vert_line') "{c |}" ///
-		_col(`col_proportion_based') "Proportion-based" ///
-		_col(`col_mean_under_ra') "Expected under rand. alloc." ///
+		_col(`col_proportion_based') "Naive" ///
+		_col(`col_mean_under_ra') "Expected u.r.a." ///
 		_col(`col_CT_corrected') "CT-corrected"
-	display as text "{hline `=`col_vert_line'-1'}{c +}{hline 65}"
+	display as text "{hline `=`col_vert_line'-1'}{c +}{hline 48}"
 	local name_1 Duncan
 	local name_2 Theil
 	local name_3 Atkinson
@@ -1103,12 +1112,13 @@ end
 /******************************************************************************/
 capture program drop Display_line_ct
 program define Display_line_ct
+	version 14.2
 	args name_index name_weight index_prop_based index_expected_under_ra index_corr_CT ///
 		col_indent_first_col col_weight col_vert_line col_proportion_based col_mean_under_ra col_CT_corrected ///
 		width_format
 	local space_center_weight 5
-	local space_center_result_1 4
-	local space_center_result_2 9
+	local space_center_result_1 -1
+	local space_center_result_2 4
 	local space_center_result_3 3
 	display as text _col(`col_indent_first_col') "`name_index'"  _col(`=`col_weight'+`space_center_weight'') "`name_weight'" _col(`col_vert_line') "{c |}" ///
 		as text _col(`=`col_proportion_based'+`space_center_result_1'') as result %-`width_format'.0g `index_prop_based' ///

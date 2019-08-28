@@ -1,3 +1,4 @@
+version 14.2
 /******************************************************************************/
 /* this do-file implements inference (confidence intervals) for the Beta method 
 of Rathelot 2012 (R), or at least for the number of components of the 

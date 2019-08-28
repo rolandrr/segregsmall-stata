@@ -1,4 +1,5 @@
-
+version 14.2
+/* This do-file implements conditional analysis with R beta method */
 
 capture mata: mata drop Esti_DTACWG_beta_from_structcond()
 mata:

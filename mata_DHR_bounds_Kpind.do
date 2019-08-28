@@ -1,3 +1,4 @@
+version 14.2
 /* This do-files express the bounds for the case K and p independent
 In this setting, cf. Appendix, the bounds are estimated as in the cae with
 a single unit size, hence no difference between unweighted (unit level)

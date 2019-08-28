@@ -1,3 +1,4 @@
+version 14.2
 /******************************************************************************/
 /* This do-file performs bounds estimation for the DHR method for
 Duncan, Theil, Coworker, Atkinson for allK i.e. with K random (it also works
