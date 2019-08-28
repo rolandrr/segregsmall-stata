@@ -1,7 +1,7 @@
 capture program drop db_from_unit_level
 program db_from_unit_level
 	
-	version 13
+	version 14.2
 	
 	/* NB : the function is a void function in a way but creates 
 	a mata structure called: struct_db_uncond */
@@ -168,4 +168,3 @@ program db_from_unit_level
 	mata: struct_db_uncond.info_data.nb_K_positive_obs = length(struct_db_uncond.info_data.list_K_positive_obs)
 	
 end
-

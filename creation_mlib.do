@@ -1,3 +1,4 @@
+version 14.2
 /* this do-files creates the mata functions used for the package segregsmall 
 and save and gather them in a mata library lsegregsmall.mlib */
 
@@ -6,7 +7,10 @@ and save and gather them in a mata library lsegregsmall.mlib */
 /******************************************************************************/
 /* NB: the order of the files matter as some structures use previous ones */
 /* directory where are the .do that create the mata structures and functions */
-cd "C:\Temp\Dropbox\Segregation_polarisation\Code Stata XDH-RR\Current\beta_version_v1\do_files_for_mata"
+clear all
+cd "C:/Temp/Dropbox/Segregation_polarisation/Code Stata XDH-RR/Current/beta_version_v1/do_files_for_mata"
+//cd "/Users/lucasgirard/Dropbox/Segregation_polarisation/Code Stata XDH-RR/Current/beta_version_v1/do_files_for_mata"
+
 /* data base manipulation and output */
 do mata_output
 do mata_tools_database
@@ -41,7 +45,8 @@ do mata_CT_stata_output
 /* Creation of the mlib */
 /******************************************************************************/
 /* directory where to store the .mlib files (later to be put online to be shared) */
-cd "C:\Temp\Dropbox\Segregation_polarisation\Code Stata XDH-RR\Current\beta_version_v1\files_to_distribute"
+cd "C:/Temp/Dropbox/Segregation_polarisation/Code Stata XDH-RR/Current/beta_version_v1/files_to_distribute"
+//cd "/Users/lucasgirard/Dropbox/Segregation_polarisation/Code Stata XDH-RR/Current/beta_version_v1/files_to_distribute"
 
 /* lsegregsmall_dataoutput (begin) */
 mata: mata mlib create lsegregsmall, replace

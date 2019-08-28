@@ -1,3 +1,4 @@
+version 14.2
 /******************************************************************************/
 /* This do-file creates structures and functions for defining principal
 representations
@@ -273,4 +274,3 @@ real matrix get_xy_from_x_and_mu(numeric rowvector x, numeric colvector mu) {
 	return(x \ (y'))
 }
 end
-

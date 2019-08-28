@@ -4,10 +4,10 @@ v 3
 d 'SEGREGSMALL': estimation of segregation indices in small-unit settings
 
 * description/author's)
-d The package 'segregsmall' implements several estimation and inference methods 
-d to get classical segregation indices (Duncan, Theil, Atkinson, Coworker, and Gini),
-d in particular in situations where the units (neigbourhoods, firms, classrooms, etc.)
-d are 'small', namely contain few individuals.
+d The package 'segregsmall' implements several estimation and inference methods
+d to get classical segregation indices (Duncan, Theil, Atkinson, Coworker, and
+d Gini), in particular in situations where the units (neighborhoods, firms,
+d classrooms, etc.) are 'small', namely contain few individuals.
 d
 d The three methods implemented come from the following articles:
 d - D'Haultfoeuille, X. and Rathelot, R., 2017.
@@ -20,16 +20,17 @@ d - Carrington, W.J. and Troske, K.R., 1997.
 d On measuring segregation in samples with small units.
 d Journal of Business & Economic Statistics, 15(4), pp.402-409.
 d
-d The package also allows to estimate conditional indices that measures "net"
-d or "residual" segregation: taking into account other characteristics 
-d (either of individuals, or of units) that may influence the allocation
+d The package also allows to estimate conditional indices that measure "net"
+d or "residual" segregation taking into account other characteristics 
+d (either of individuals or units) that may influence the allocation
 d of individuals into units.
 d
-d Requires: Stata version 13 (TBD IF POSSIBLE LOWER)
+d Requires: Stata version 14.2
 d
-d Distribution-Date: 20190215
+d Distribution-Date: 20190828
 d
-d Authors: Lucas Girard (CREST), Xavier D'Haultfoeuille (CREST), Roland Rathelot (Warwick)
+d Authors: Xavier D'Haultfoeuille (CREST), Lucas Girard (CREST),
+d and Roland Rathelot (Warwick)
 d Support: lucas.girard@ensae.fr
 
 * installation files

@@ -1,4 +1,5 @@
-/* functions used for conditional analyses */
+version 14.2
+/* functions used for conditional analyses with CT method */
 
 /* same matrix output as results_eci.uncond.estimates_ci in mata_CT_stata_output
 but just for one type

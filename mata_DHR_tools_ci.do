@@ -1,3 +1,4 @@
+version 14.2
 /******************************************************************************/
 /* This do-file creates structures and functions used later to compute
 confidence interval (ci) for Duncan, Theil, Coworker, Atkinson for allK i.e. 
@@ -563,5 +564,4 @@ real rowvector CI_1(real scalar I_n, real rowvector bounds_hat, ///
 	if (I_n) return(CI_boundary(bounds_hat, bounds_bootstrap, alpha))
 	else return(CI_interior(bounds_hat, bounds_bootstrap, alpha))
 }
-end					
-	
+end	

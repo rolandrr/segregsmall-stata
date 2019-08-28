@@ -1,3 +1,4 @@
+version 14.2
 /******************************************************************************/
 /* This do-file creates the different mata structures and functions used to 
 perform ML for allK (random K case cf. Appendix B.1. of DHR) */
@@ -294,4 +295,3 @@ struct raw_ML_results_allK scalar Estimation_ML_allK(	real matrix db, ///
 	return(ML_allK)
 }
 end
-

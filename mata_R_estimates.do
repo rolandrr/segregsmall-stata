@@ -1,3 +1,4 @@
+version 14.2
 /******************************************************************************/
 /* this do-file implements Beta method of Rathelot 2012 (R) for the case 
 components of the mixture c = 1 (at least for the moment) - more precisely
@@ -29,7 +30,9 @@ real scalar Duncan_beta(real rowvector parameters) {
 		alpha = parameters[1]
 		beta = parameters[2]
 		mu = alpha / (alpha + beta)
-		theta = ((alpha + beta)^2 / (2*alpha*beta)) * (mu * (ibeta(alpha, beta, mu) - ibeta(alpha+1, beta, mu)) + (1-mu) * (ibeta(alpha, beta+1, mu) - ibeta(alpha, beta, mu)))	
+		/*theta = ((alpha + beta)^2 / (2*alpha*beta)) * (mu * (ibeta(alpha, beta, mu) - ibeta(alpha+1, beta, mu)) + (1-mu) * (ibeta(alpha, beta+1, mu) - ibeta(alpha, beta, mu)))	
+		below is an equivalent simpler expression for the Duncan index*/
+		theta = (ibeta(alpha, beta, mu) - ibeta(alpha+1, beta, mu)) / (1-mu)		
 	}
 	/* case : c > 1 */
 	else {
@@ -39,7 +42,9 @@ real scalar Duncan_beta(real rowvector parameters) {
 		lambdas = parameters[(2*c+1)..(3*c)]
 		mujs = alphas :/ (alphas :+ betas)
 		mu = lambdas * mujs'
-		theta = (lambdas * ((1-mu) :+ ((2*mu-1):*ibeta(alphas, betas, mu)) - (mujs:*ibeta(alphas:+1, betas, mu)) - ((1:-mujs):*(1:- ibeta(alphas, betas:+1, mu))))') / (2*mu*(1-mu))
+		/*theta = (lambdas * ((1-mu) :+ ((2*mu-1):*ibeta(alphas, betas, mu)) - (mujs:*ibeta(alphas:+1, betas, mu)) - ((1:-mujs):*(1:- ibeta(alphas, betas:+1, mu))))') / (2*mu*(1-mu))
+		below is an equivalent simpler expression for the Duncan index*/
+		theta = (mu*(lambdas * ibeta(alphas, betas, mu)') - (lambdas :* mujs) * ibeta(alphas:+1, betas, mu)') / (mu*(1-mu))
 	}
 	return(theta)
 }
@@ -531,4 +536,3 @@ real matrix Estimates_DTACWG_beta_Kpind_eci(real scalar b_atkinson, ///
 	else return(estimates_DTACWG_beta)
 }
 end
-

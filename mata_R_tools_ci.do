@@ -1,6 +1,6 @@
-
-
-
+version 14.2
+/* This do-file defines the structure and functions used to perform
+inference in the R beta method */
 
 /* draw_db_bootstrap_unit_level */
 /* from an original matrix of data db, perform bootstrap (usual bootstrap with 
@@ -193,17 +193,6 @@ struct Struct_db_cond scalar Draw_struct_db_condindi_unit(struct Struct_db_cond 
 	return(struct_db_cond_boot)
 }
 end	
-
-
-/***/
-/*** need */
-/*
-struct_db_cond.type_probabilities
-
-info_data_per_type[type].Kbar
-info_data_per_type[type].nb_K_positive_obs
-info_data.list_K_positive_obs
-*/
 
 /* CI_by_percentile_bootstrap() */
 /* Input : vector of bootstrap realization of the statistic of interest,

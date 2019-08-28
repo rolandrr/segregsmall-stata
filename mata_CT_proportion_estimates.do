@@ -1,3 +1,4 @@
+version 14.2
 /* this do-files creates the functions to do the proportion-based indices */
 
 /* Input: 
@@ -192,4 +193,3 @@ real scalar Prop_Gini_from_struct_db_unc(struct Struct_db_uncond scalar struct_d
 	return(Prop_Gini(struct_db_uncond.db, struct_db_uncond.info_data.prop_minority_hat, struct_db_uncond.info_data.nb_individuals))
 }
 end
-

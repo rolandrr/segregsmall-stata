@@ -1,7 +1,7 @@
 capture program drop db_from_indiv_level_cond_unit
 program db_from_indiv_level_cond_unit
 	
-	version 13
+	version 14.2
 	
 	/* NB : the function is a void function in a way but creates 
 	a mata structure used for conditional segregation 

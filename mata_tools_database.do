@@ -1,3 +1,4 @@
+version 14.2
 /* functions to manipulate data */
 
 /******************************************************************************/
@@ -287,5 +288,3 @@ real scalar Cons_nb_singleton_cells_all_type(struct Struct_db_cond scalar struct
 	return(sum(struct_db_cond.summary_info_data_per_type[,3], 1))
 }
 end
-
-

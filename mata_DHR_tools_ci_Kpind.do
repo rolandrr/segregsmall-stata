@@ -1,3 +1,4 @@
+version 14.2
 /******************************************************************************/
 /* This do-file creates structures and functions used later to compute
 confidence interval (ci) for Duncan, Theil, Coworker, Atkinson for allK i.e. 

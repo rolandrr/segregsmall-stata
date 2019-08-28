@@ -1,3 +1,4 @@
+version 14.2
 /******************************************************************************/
 /* this do-file implements part of Beta method of Rathelot 2012 (R) for the case 
 components of the mixture c = 1 (at least for the moment); it does the 
@@ -771,4 +772,3 @@ real matrix beta_ML(	real matrix db, ///
 	return((parameters_hat \ variance_hat))
 }
 end
-

@@ -1,4 +1,5 @@
-/* Wrap-up functions for estimation and inference */
+version 14.2
+/* Wrap-up functions for estimation and inference with R beta method */
 
 /******************************************************************************/
 /* Unconditional analysis */
@@ -320,6 +321,3 @@ struct Results_eci scalar St_esti_ci_beta_DTACWG_cond(	struct Struct_db_cond sca
 	return(results_eci)
 }
 end
-
-
-

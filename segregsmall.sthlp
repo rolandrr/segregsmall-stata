@@ -1,5 +1,5 @@
 {smcl}
-{* *! version 1.0.2 07mar2019}{...}
+{* *! version 1.1.0 28aug2019}{...}
 {viewerjumpto "Syntax" "segregsmall##syntax"}{...}
 {viewerjumpto "Description" "segregsmall##description"}{...}
 {viewerjumpto "Options" "segregsmall##options"}{...}
